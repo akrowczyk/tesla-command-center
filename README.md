@@ -17,6 +17,19 @@ A premium, dark-themed dashboard for monitoring and controlling your Tesla vehic
 - **PWA-ready** with web app manifest and mobile-optimized viewport
 - **Auto-polling** with configurable refresh interval to keep data up to date
 
+## Screenshots
+
+| | |
+|:---:|:---:|
+| ![Dashboard](docs/screenshots/dashboard.png) | ![Controls](docs/screenshots/controls.png) |
+| **Dashboard** | **Controls** |
+| ![Charging](docs/screenshots/charging.png) | ![Drives](docs/screenshots/drives.png) |
+| **Charging** | **Drives** |
+| ![Map](docs/screenshots/map.png) | ![Replay](docs/screenshots/replay.png) |
+| **Map** | **Drive Replay** |
+| ![Climate](docs/screenshots/climate.png) | ![Settings](docs/screenshots/settings.png) |
+| **Climate** | **Settings** |
+
 ## Tech Stack
 
 | Layer | Technology |
