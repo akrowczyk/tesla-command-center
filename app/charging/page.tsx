@@ -109,8 +109,8 @@ export default function ChargingPage() {
               {/* Charge limit slider */}
               <div className="w-full mt-6">
                 <div className="flex justify-between text-xs mb-2">
-                  <span className="text-white/40">Charge Limit</span>
-                  <span className="font-mono text-white/70">{chargeLimit}%</span>
+                  <span className="text-white/60">Charge Limit</span>
+                  <span className="font-mono text-white/85">{chargeLimit}%</span>
                 </div>
                 <Slider
                   value={[chargeLimit]}
@@ -132,8 +132,8 @@ export default function ChargingPage() {
               {/* Charging amps slider */}
               <div className="w-full mt-4 pt-4 border-t border-white/[0.06]">
                 <div className="flex justify-between text-xs mb-2">
-                  <span className="text-white/40">Charging Amps</span>
-                  <span className="font-mono text-white/70">{chargingAmps}A</span>
+                  <span className="text-white/60">Charging Amps</span>
+                  <span className="font-mono text-white/85">{chargingAmps}A</span>
                 </div>
                 <Slider
                   value={[chargingAmps]}
@@ -143,7 +143,7 @@ export default function ChargingPage() {
                   step={1}
                   className="mb-3"
                 />
-                <div className="flex justify-between text-[10px] text-white/20 font-mono mb-3">
+                <div className="flex justify-between text-[10px] text-white/40 font-mono mb-3">
                   <span>1A</span>
                   <span>48A</span>
                 </div>
@@ -181,17 +181,17 @@ export default function ChargingPage() {
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <span className="text-[10px] text-white/30 uppercase tracking-wider">Capacity</span>
+                  <span className="text-[10px] text-white/50 uppercase tracking-wider">Capacity</span>
                   <p className="text-2xl font-mono font-bold text-white mt-1">
                     {healthData.result.capacity.toFixed(1)}
-                    <span className="text-sm text-white/40 ml-1">kWh</span>
+                    <span className="text-sm text-white/60 ml-1">kWh</span>
                   </p>
                 </div>
                 <div>
-                  <span className="text-[10px] text-white/30 uppercase tracking-wider">Max Range</span>
+                  <span className="text-[10px] text-white/50 uppercase tracking-wider">Max Range</span>
                   <p className="text-2xl font-mono font-bold text-white mt-1">
                     {formatDistance(healthData.result.max_range, distanceUnit, 0).split(" ")[0]}
-                    <span className="text-sm text-white/40 ml-1">{distanceLabel(distanceUnit)}</span>
+                    <span className="text-sm text-white/60 ml-1">{distanceLabel(distanceUnit)}</span>
                   </p>
                 </div>
               </div>
@@ -199,7 +199,7 @@ export default function ChargingPage() {
               {/* Type breakdown chart */}
               {chargeTypeBreakdown.length > 0 && (
                 <div className="mt-6">
-                  <span className="text-[10px] text-white/30 uppercase tracking-wider">
+                  <span className="text-[10px] text-white/50 uppercase tracking-wider">
                     Charging Sources (kWh)
                   </span>
                   <div className="h-[160px] mt-2">
@@ -256,19 +256,19 @@ export default function ChargingPage() {
             ))}
           </div>
         ) : charges.length === 0 ? (
-          <p className="text-xs text-white/30 text-center py-8">No charging sessions recorded</p>
+          <p className="text-xs text-white/50 text-center py-8">No charging sessions recorded</p>
         ) : (
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow className="border-white/[0.06] hover:bg-transparent">
-                  <TableHead className="text-[11px] text-white/40">Date</TableHead>
-                  <TableHead className="text-[11px] text-white/40">Location</TableHead>
-                  <TableHead className="text-[11px] text-white/40">Type</TableHead>
-                  <TableHead className="text-[11px] text-white/40 text-right">Energy</TableHead>
-                  <TableHead className="text-[11px] text-white/40 text-right">Duration</TableHead>
-                  <TableHead className="text-[11px] text-white/40 text-right">Range</TableHead>
-                  <TableHead className="text-[11px] text-white/40 text-right">Cost</TableHead>
+                  <TableHead className="text-[11px] text-white/60">Date</TableHead>
+                  <TableHead className="text-[11px] text-white/60">Location</TableHead>
+                  <TableHead className="text-[11px] text-white/60">Type</TableHead>
+                  <TableHead className="text-[11px] text-white/60 text-right">Energy</TableHead>
+                  <TableHead className="text-[11px] text-white/60 text-right">Duration</TableHead>
+                  <TableHead className="text-[11px] text-white/60 text-right">Range</TableHead>
+                  <TableHead className="text-[11px] text-white/60 text-right">Cost</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -279,7 +279,7 @@ export default function ChargingPage() {
                   });
                   return (
                     <TableRow key={charge.id} className="border-white/[0.04] hover:bg-white/[0.02]">
-                      <TableCell className="text-xs font-mono text-white/60">
+                      <TableCell className="text-xs font-mono text-white/75">
                         {format(charge.started_at * 1000, "MMM d, yyyy")}
                       </TableCell>
                       <TableCell className="text-xs text-white/60 max-w-[200px] truncate">
@@ -287,25 +287,24 @@ export default function ChargingPage() {
                       </TableCell>
                       <TableCell>
                         <span
-                          className={`text-[10px] font-mono px-2 py-0.5 rounded-full ${
-                            charge.is_supercharger
-                              ? "bg-tesla-red/10 text-tesla-red"
-                              : "bg-tesla-charging/10 text-tesla-charging"
-                          }`}
+                          className={`text-[10px] font-mono px-2 py-0.5 rounded-full ${charge.is_supercharger
+                            ? "bg-tesla-red/10 text-tesla-red"
+                            : "bg-tesla-charging/10 text-tesla-charging"
+                            }`}
                         >
                           {charge.is_supercharger ? "SC" : "Home"}
                         </span>
                       </TableCell>
-                      <TableCell className="text-xs font-mono text-white/70 text-right">
+                      <TableCell className="text-xs font-mono text-white/85 text-right">
                         {charge.energy_added.toFixed(1)} kWh
                       </TableCell>
-                      <TableCell className="text-xs font-mono text-white/60 text-right">
+                      <TableCell className="text-xs font-mono text-white/75 text-right">
                         {formatDuration(duration, { format: ["hours", "minutes"] }) || "< 1 min"}
                       </TableCell>
-                      <TableCell className="text-xs font-mono text-white/60 text-right">
+                      <TableCell className="text-xs font-mono text-white/75 text-right">
                         +{formatDistance(charge.miles_added, distanceUnit, 0)}
                       </TableCell>
-                      <TableCell className="text-xs font-mono text-white/60 text-right">
+                      <TableCell className="text-xs font-mono text-white/75 text-right">
                         {charge.cost > 0 ? `$${charge.cost.toFixed(2)}` : "—"}
                       </TableCell>
                     </TableRow>

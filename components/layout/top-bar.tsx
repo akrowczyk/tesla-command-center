@@ -55,7 +55,7 @@ export function TopBar({ onMenuToggle }: { onMenuToggle?: () => void }) {
       <div className="flex items-center gap-3">
         {/* Last updated */}
         {lastUpdated && (
-          <span className="text-[11px] text-white/30 font-mono">
+          <span className="text-[11px] text-white/50 font-mono">
             Updated {formatDistanceToNow(lastUpdated, { addSuffix: true })}
           </span>
         )}
@@ -64,7 +64,7 @@ export function TopBar({ onMenuToggle }: { onMenuToggle?: () => void }) {
         <Button
           variant="ghost"
           size="icon"
-          className="h-7 w-7 text-white/40 hover:text-white/80"
+          className="h-7 w-7 text-white/50 hover:text-white/80"
           onClick={handleRefresh}
         >
           <RefreshCw className="w-3.5 h-3.5" />
@@ -87,7 +87,7 @@ export function TopBar({ onMenuToggle }: { onMenuToggle?: () => void }) {
         <div
           className={cn(
             "flex items-center gap-1.5",
-            status ? "text-tesla-success" : "text-white/20"
+            status ? "text-tesla-success" : "text-white/40"
           )}
         >
           {status ? (

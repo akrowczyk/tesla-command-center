@@ -105,11 +105,11 @@ export function BatteryGauge({
           )}
         >
           {level}
-          <span className={cn("text-white/40", size === "lg" ? "text-lg" : "text-xs")}>%</span>
+          <span className={cn("text-white/60", size === "lg" ? "text-lg" : "text-xs")}>%</span>
         </span>
         <span
           className={cn(
-            "font-mono text-white/50",
+            "font-mono text-white/70",
             size === "lg" ? "text-sm mt-1" : "text-[10px]"
           )}
         >
@@ -121,7 +121,7 @@ export function BatteryGauge({
           </span>
         )}
         {isCharging && minutesToFull !== undefined && minutesToFull > 0 && size === "lg" && (
-          <span className="text-[10px] font-mono text-white/30 mt-0.5">
+          <span className="text-[10px] font-mono text-white/50 mt-0.5">
             {Math.floor(minutesToFull / 60)}h {minutesToFull % 60}m left
           </span>
         )}

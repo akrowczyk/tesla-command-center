@@ -64,7 +64,7 @@ export default function SettingsPage() {
         <div className="space-y-5">
           {/* Distance */}
           <div className="flex items-center justify-between">
-            <span className="text-sm text-white/60">Distance</span>
+            <span className="text-sm text-white/75">Distance</span>
             <Select value={distanceUnit} onValueChange={(v) => setDistanceUnit(v as "mi" | "km")}>
               <SelectTrigger className="h-8 w-24 text-xs bg-white/[0.03] border-white/[0.08]">
                 <SelectValue />
@@ -78,7 +78,7 @@ export default function SettingsPage() {
 
           {/* Temperature */}
           <div className="flex items-center justify-between">
-            <span className="text-sm text-white/60">Temperature</span>
+            <span className="text-sm text-white/75">Temperature</span>
             <Select value={temperatureUnit} onValueChange={(v) => setTemperatureUnit(v as "F" | "C")}>
               <SelectTrigger className="h-8 w-28 text-xs bg-white/[0.03] border-white/[0.08]">
                 <SelectValue />
@@ -92,7 +92,7 @@ export default function SettingsPage() {
 
           {/* Pressure */}
           <div className="flex items-center justify-between">
-            <span className="text-sm text-white/60">Tire Pressure</span>
+            <span className="text-sm text-white/75">Tire Pressure</span>
             <Select value={pressureUnit} onValueChange={(v) => setPressureUnit(v as "psi" | "bar" | "kpa")}>
               <SelectTrigger className="h-8 w-24 text-xs bg-white/[0.03] border-white/[0.08]">
                 <SelectValue />
@@ -108,8 +108,8 @@ export default function SettingsPage() {
           {/* Refresh Interval */}
           <div>
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm text-white/60">Refresh Interval</span>
-              <span className="text-xs font-mono text-white/50">{refreshInterval}s</span>
+              <span className="text-sm text-white/75">Refresh Interval</span>
+              <span className="text-xs font-mono text-white/70">{refreshInterval}s</span>
             </div>
             <Slider
               value={[refreshInterval]}
@@ -118,7 +118,7 @@ export default function SettingsPage() {
               max={120}
               step={5}
             />
-            <div className="flex justify-between text-[10px] text-white/20 font-mono mt-1">
+            <div className="flex justify-between text-[10px] text-white/40 font-mono mt-1">
               <span>5s</span>
               <span>120s</span>
             </div>
@@ -165,8 +165,8 @@ export default function SettingsPage() {
 function InfoRow({ label, value, mono = false }: { label: string; value: string; mono?: boolean }) {
   return (
     <div className="flex items-center justify-between py-1">
-      <span className="text-xs text-white/40">{label}</span>
-      <span className={`text-xs text-white/70 ${mono ? "font-mono" : ""}`}>{value}</span>
+      <span className="text-xs text-white/60">{label}</span>
+      <span className={`text-xs text-white/85 ${mono ? "font-mono" : ""}`}>{value}</span>
     </div>
   );
 }

@@ -230,8 +230,8 @@ export default function ControlsPage() {
           {/* Speed limit */}
           <div className="mt-4 pt-4 border-t border-white/[0.06]">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs text-white/50">Speed Limit</span>
-              <span className="text-xs font-mono text-white/70">{Math.round(convertSpeed(speedLimit, distanceUnit))} {speedLabel(distanceUnit)}</span>
+              <span className="text-xs text-white/60">Speed Limit</span>
+              <span className="text-xs font-mono text-white/85">{Math.round(convertSpeed(speedLimit, distanceUnit))} {speedLabel(distanceUnit)}</span>
             </div>
             <Slider
               value={[speedLimit]}
@@ -303,12 +303,12 @@ export default function ControlsPage() {
           {/* Software version */}
           <div className="mb-4">
             <div className="flex items-center justify-between text-xs">
-              <span className="text-white/40">Current Version</span>
-              <span className="font-mono text-white/70">{vs?.car_version ?? "—"}</span>
+              <span className="text-white/60">Current Version</span>
+              <span className="font-mono text-white/85">{vs?.car_version ?? "—"}</span>
             </div>
             {vs?.software_update?.version?.trim() && (
               <div className="flex items-center justify-between text-xs mt-1">
-                <span className="text-white/40">Available</span>
+                <span className="text-white/60">Available</span>
                 <span className="font-mono text-tesla-success">{vs.software_update.version}</span>
               </div>
             )}

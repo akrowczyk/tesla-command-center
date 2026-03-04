@@ -409,7 +409,7 @@ export function DriveReplayMap({ drive, onClose, mapsApiKey }: Props) {
         <div className="absolute inset-0 bg-[#0a0a0f] flex items-center justify-center z-20">
           <div className="text-center">
             <Loader2 className="w-8 h-8 text-tesla-red animate-spin mx-auto mb-3" />
-            <p className="text-sm text-white/50">
+            <p className="text-sm text-white/70">
               {pathLoading ? "Loading drive path..." : "Loading map..."}
             </p>
           </div>
@@ -425,20 +425,20 @@ export function DriveReplayMap({ drive, onClose, mapsApiKey }: Props) {
               Drive Replay
             </span>
           </div>
-          <p className="text-xs text-white/70 font-medium">
+          <p className="text-xs text-white/85 font-medium">
             {drive.starting_saved_location ||
               drive.starting_location.split(",")[0]}
           </p>
           <div className="flex items-center gap-1 my-1">
             <div className="flex-1 h-px bg-white/10" />
-            <span className="text-[9px] text-white/30 px-1">to</span>
+            <span className="text-[9px] text-white/50 px-1">to</span>
             <div className="flex-1 h-px bg-white/10" />
           </div>
-          <p className="text-xs text-white/70 font-medium">
+          <p className="text-xs text-white/85 font-medium">
             {drive.ending_saved_location ||
               drive.ending_location.split(",")[0]}
           </p>
-          <div className="flex items-center gap-3 mt-2 text-[10px] text-white/40">
+          <div className="flex items-center gap-3 mt-2 text-[10px] text-white/60">
             <span>{dateStr}</span>
             <span>{formatTime(drive.started_at)}</span>
             <span>{formatDistance(drive.odometer_distance, distanceUnit)}</span>
@@ -449,7 +449,7 @@ export function DriveReplayMap({ drive, onClose, mapsApiKey }: Props) {
       {/* ===== Close button (top-right) ===== */}
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 z-10 w-9 h-9 rounded-lg bg-[#0a0a0f]/90 backdrop-blur-xl border border-white/[0.06] flex items-center justify-center text-white/50 hover:text-white hover:bg-white/10 transition-all"
+        className="absolute top-4 right-4 z-10 w-9 h-9 rounded-lg bg-[#0a0a0f]/90 backdrop-blur-xl border border-white/[0.06] flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all"
       >
         <X className="w-4 h-4" />
       </button>
@@ -464,10 +464,10 @@ export function DriveReplayMap({ drive, onClose, mapsApiKey }: Props) {
                 <Gauge className="w-3.5 h-3.5 text-tesla-red" />
               </div>
               <div>
-                <p className="text-[10px] text-white/35 leading-none">Speed</p>
+                <p className="text-[10px] text-white/55 leading-none">Speed</p>
                 <p className="text-sm font-mono font-bold text-white/90 leading-tight">
                   {Math.round(convertSpeed(currentStats.speed, distanceUnit))}{" "}
-                  <span className="text-[10px] text-white/40 font-normal">
+                  <span className="text-[10px] text-white/60 font-normal">
                     {speedLabel(distanceUnit)}
                   </span>
                 </p>
@@ -480,10 +480,10 @@ export function DriveReplayMap({ drive, onClose, mapsApiKey }: Props) {
                 <Battery className="w-3.5 h-3.5 text-green-400" />
               </div>
               <div>
-                <p className="text-[10px] text-white/35 leading-none">Battery</p>
+                <p className="text-[10px] text-white/55 leading-none">Battery</p>
                 <p className="text-sm font-mono font-bold text-white/90 leading-tight">
                   {Math.round(currentStats.battery)}
-                  <span className="text-[10px] text-white/40 font-normal">%</span>
+                  <span className="text-[10px] text-white/60 font-normal">%</span>
                 </p>
               </div>
             </div>
@@ -494,10 +494,10 @@ export function DriveReplayMap({ drive, onClose, mapsApiKey }: Props) {
                 <Clock className="w-3.5 h-3.5 text-blue-400" />
               </div>
               <div>
-                <p className="text-[10px] text-white/35 leading-none">Elapsed</p>
+                <p className="text-[10px] text-white/55 leading-none">Elapsed</p>
                 <p className="text-sm font-mono font-bold text-white/90 leading-tight">
                   {formatDuration(currentStats.elapsed)}
-                  <span className="text-[10px] text-white/40 font-normal">
+                  <span className="text-[10px] text-white/60 font-normal">
                     {" "}
                     / {formatDuration(currentStats.total)}
                   </span>
@@ -535,7 +535,7 @@ export function DriveReplayMap({ drive, onClose, mapsApiKey }: Props) {
 
               {/* Scrubber */}
               <div className="flex-1 flex items-center gap-3">
-                <span className="text-[10px] font-mono text-white/40 w-10 text-right shrink-0">
+                <span className="text-[10px] font-mono text-white/60 w-10 text-right shrink-0">
                   {formatDuration((currentStats?.elapsed ?? 0))}
                 </span>
                 <div className="flex-1 relative">
@@ -549,7 +549,7 @@ export function DriveReplayMap({ drive, onClose, mapsApiKey }: Props) {
                     className="scrubber w-full"
                   />
                 </div>
-                <span className="text-[10px] font-mono text-white/40 w-10 shrink-0">
+                <span className="text-[10px] font-mono text-white/60 w-10 shrink-0">
                   {formatDuration((currentStats?.total ?? 0))}
                 </span>
               </div>
@@ -560,11 +560,10 @@ export function DriveReplayMap({ drive, onClose, mapsApiKey }: Props) {
                   <button
                     key={s}
                     onClick={() => setSpeed(s)}
-                    className={`px-2 py-1 rounded text-[10px] font-mono transition-all ${
-                      speed === s
+                    className={`px-2 py-1 rounded text-[10px] font-mono transition-all ${speed === s
                         ? "bg-tesla-red text-white"
-                        : "bg-white/[0.04] text-white/40 hover:text-white/70 hover:bg-white/[0.08]"
-                    }`}
+                        : "bg-white/[0.04] text-white/55 hover:text-white/80 hover:bg-white/[0.08]"
+                      }`}
                   >
                     {s}x
                   </button>
@@ -576,12 +575,12 @@ export function DriveReplayMap({ drive, onClose, mapsApiKey }: Props) {
             <div className="flex items-center justify-between mt-2 px-1">
               <div className="flex items-center gap-1.5">
                 <div className="w-2 h-2 rounded-full bg-green-500" />
-                <span className="text-[10px] text-white/30">
+                <span className="text-[10px] text-white/50">
                   {drive.starting_saved_location || "Start"}
                 </span>
               </div>
               <div className="flex items-center gap-1.5">
-                <span className="text-[10px] text-white/30">
+                <span className="text-[10px] text-white/50">
                   {drive.ending_saved_location || "End"}
                 </span>
                 <div className="w-2 h-2 rounded-full bg-red-500" />

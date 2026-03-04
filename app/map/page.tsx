@@ -76,8 +76,8 @@ export default function MapPage() {
         ) : (
           <div className="w-full h-full bg-tesla-bg-raised flex items-center justify-center">
             <div className="text-center">
-              <MapPin className="w-8 h-8 text-white/20 mx-auto mb-2" />
-              <p className="text-sm text-white/30">Location unavailable</p>
+              <MapPin className="w-8 h-8 text-white/40 mx-auto mb-2" />
+              <p className="text-sm text-white/50">Location unavailable</p>
             </div>
           </div>
         )}
@@ -93,11 +93,11 @@ export default function MapPage() {
                 <h3 className="text-sm font-medium text-white truncate">
                   {vehicleData?.display_name ?? "Vehicle"}
                 </h3>
-                <p className="text-[11px] text-white/50 mt-0.5 line-clamp-2">
+                <p className="text-[11px] text-white/70 mt-0.5 line-clamp-2">
                   {locationLoading ? "Loading..." : address}
                 </p>
                 {lat && lng && (
-                  <p className="text-[10px] font-mono text-white/30 mt-1">
+                  <p className="text-[10px] font-mono text-white/50 mt-1">
                     {lat.toFixed(6)}, {lng.toFixed(6)}
                   </p>
                 )}
@@ -124,7 +124,7 @@ export default function MapPage() {
             <GlassCard className="!p-3 bg-[#0a0a0f]/90 backdrop-blur-lg">
               <div className="flex items-center gap-2 mb-2">
                 <Route className="w-3 h-3 text-tesla-red" />
-                <span className="text-[10px] text-white/40 uppercase tracking-wider font-medium">
+                <span className="text-[10px] text-white/60 uppercase tracking-wider font-medium">
                   Recent Drives — Click to Replay
                 </span>
               </div>
@@ -150,16 +150,16 @@ export default function MapPage() {
                         <Play className="w-3 h-3 text-tesla-red" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-[11px] text-white/60 truncate group-hover:text-white/80 transition-colors">
+                        <p className="text-[11px] text-white/75 truncate group-hover:text-white/90 transition-colors">
                           {drive.ending_saved_location ||
                             drive.ending_location.split(",")[0]}
                         </p>
-                        <div className="flex items-center gap-2 text-[10px] text-white/30">
+                        <div className="flex items-center gap-2 text-[10px] text-white/50">
                           <span>{dateStr}</span>
                           <span>{timeStr}</span>
                         </div>
                       </div>
-                      <span className="text-[10px] font-mono text-white/30 shrink-0">
+                      <span className="text-[10px] font-mono text-white/50 shrink-0">
                         {formatDistance(drive.odometer_distance, distanceUnit)}
                       </span>
                     </button>

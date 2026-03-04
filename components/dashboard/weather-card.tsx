@@ -46,43 +46,43 @@ export function WeatherCard() {
             <span className="text-3xl font-mono font-bold text-white telemetry-value">
               {convertTemp(data.temperature, tempUnit)}
             </span>
-            <span className="text-sm text-white/40 font-mono">{unitSymbol}</span>
+            <span className="text-sm text-white/60 font-mono">{unitSymbol}</span>
           </div>
-          <p className="text-xs text-white/50 mt-1 capitalize">{data.condition}</p>
+          <p className="text-xs text-white/70 mt-1 capitalize">{data.condition}</p>
         </div>
       </div>
 
       <div className="grid grid-cols-2 gap-3 mt-4">
         <div className="flex items-center gap-2">
-          <Thermometer className="w-3.5 h-3.5 text-white/30" />
+          <Thermometer className="w-3.5 h-3.5 text-white/50" />
           <div>
-            <span className="text-[10px] text-white/30 block">Feels like</span>
-            <span className="text-xs font-mono text-white/60">
+            <span className="text-[10px] text-white/50 block">Feels like</span>
+            <span className="text-xs font-mono text-white/75">
               {convertTemp(data.feels_like, tempUnit)}°{unitSymbol}
             </span>
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <Droplets className="w-3.5 h-3.5 text-white/30" />
+          <Droplets className="w-3.5 h-3.5 text-white/50" />
           <div>
-            <span className="text-[10px] text-white/30 block">Humidity</span>
-            <span className="text-xs font-mono text-white/60">{data.humidity}%</span>
+            <span className="text-[10px] text-white/50 block">Humidity</span>
+            <span className="text-xs font-mono text-white/75">{data.humidity}%</span>
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <Wind className="w-3.5 h-3.5 text-white/30" />
+          <Wind className="w-3.5 h-3.5 text-white/50" />
           <div>
-            <span className="text-[10px] text-white/30 block">Wind</span>
-            <span className="text-xs font-mono text-white/60">
+            <span className="text-[10px] text-white/50 block">Wind</span>
+            <span className="text-xs font-mono text-white/75">
               {Math.round(data.wind_speed)} m/s
             </span>
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <Cloud className="w-3.5 h-3.5 text-white/30" />
+          <Cloud className="w-3.5 h-3.5 text-white/50" />
           <div>
-            <span className="text-[10px] text-white/30 block">Clouds</span>
-            <span className="text-xs font-mono text-white/60">{data.cloudiness}%</span>
+            <span className="text-[10px] text-white/50 block">Clouds</span>
+            <span className="text-xs font-mono text-white/75">{data.cloudiness}%</span>
           </div>
         </div>
       </div>

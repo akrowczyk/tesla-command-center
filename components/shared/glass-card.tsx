@@ -39,9 +39,9 @@ export function GlassCard({
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             {header.icon && (
-              <span className="text-white/40">{header.icon}</span>
+              <span className="text-white/60">{header.icon}</span>
             )}
-            <h3 className="text-sm font-medium text-white/70">
+            <h3 className="text-sm font-medium text-white/85">
               {header.title}
             </h3>
           </div>

@@ -31,10 +31,10 @@ export function StatCard({
   return (
     <div className={cn("glass-card", className)}>
       <div className="flex items-start justify-between mb-2">
-        <span className="text-[11px] uppercase tracking-wider text-white/40 font-medium">
+        <span className="text-[11px] uppercase tracking-wider text-white/60 font-medium">
           {label}
         </span>
-        {Icon && <Icon className="w-4 h-4 text-white/20" />}
+        {Icon && <Icon className="w-4 h-4 text-white/40" />}
       </div>
 
       <div className="flex items-baseline gap-1.5">
@@ -47,7 +47,7 @@ export function StatCard({
           {value}
         </span>
         {unit && (
-          <span className="text-xs text-white/40 font-mono">{unit}</span>
+          <span className="text-xs text-white/60 font-mono">{unit}</span>
         )}
       </div>
 
@@ -58,7 +58,7 @@ export function StatCard({
               "text-[11px] font-mono",
               trend === "up" && "text-tesla-success",
               trend === "down" && "text-tesla-red",
-              trend === "neutral" && "text-white/40"
+              trend === "neutral" && "text-white/60"
             )}
           >
             {trend === "up" ? "+" : trend === "down" ? "-" : ""}

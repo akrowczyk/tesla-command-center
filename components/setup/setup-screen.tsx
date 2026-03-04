@@ -74,7 +74,7 @@ export function SetupScreen() {
           <h1 className="text-xl font-semibold text-center mb-1">
             Tesla Command Center
           </h1>
-          <p className="text-sm text-white/50 text-center mb-8">
+          <p className="text-sm text-white/70 text-center mb-8">
             Connect your Tessie account to get started
           </p>
 
@@ -82,7 +82,7 @@ export function SetupScreen() {
           <div className="space-y-4">
             {/* API Key */}
             <div>
-              <label className="block text-xs font-medium text-white/60 mb-1.5 uppercase tracking-wider">
+              <label className="block text-xs font-medium text-white/75 mb-1.5 uppercase tracking-wider">
                 Tessie API Key
               </label>
               <div className="relative">
@@ -91,12 +91,12 @@ export function SetupScreen() {
                   value={apiKey}
                   onChange={(e) => setApiKey(e.target.value)}
                   placeholder="Enter your Tessie API key"
-                  className="w-full h-11 rounded-lg bg-white/[0.04] border border-white/[0.08] px-3 pr-10 text-sm text-white placeholder:text-white/25 focus:outline-none focus:ring-1 focus:ring-blue-500/50 focus:border-blue-500/50 transition-colors"
+                  className="w-full h-11 rounded-lg bg-white/[0.04] border border-white/[0.08] px-3 pr-10 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-1 focus:ring-blue-500/50 focus:border-blue-500/50 transition-colors"
                 />
                 <button
                   type="button"
                   onClick={() => setShowApiKey(!showApiKey)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/60 transition-colors"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-white/50 hover:text-white/70 transition-colors"
                 >
                   {showApiKey ? (
                     <EyeOff className="w-4 h-4" />
@@ -109,7 +109,7 @@ export function SetupScreen() {
 
             {/* VIN */}
             <div>
-              <label className="block text-xs font-medium text-white/60 mb-1.5 uppercase tracking-wider">
+              <label className="block text-xs font-medium text-white/75 mb-1.5 uppercase tracking-wider">
                 Vehicle VIN
               </label>
               <input
@@ -118,9 +118,9 @@ export function SetupScreen() {
                 onChange={(e) => setVin(e.target.value.toUpperCase())}
                 placeholder="e.g. 5YJ3E1EA1PF000000"
                 maxLength={17}
-                className="w-full h-11 rounded-lg bg-white/[0.04] border border-white/[0.08] px-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:ring-1 focus:ring-blue-500/50 focus:border-blue-500/50 transition-colors font-mono tracking-wide"
+                className="w-full h-11 rounded-lg bg-white/[0.04] border border-white/[0.08] px-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-1 focus:ring-blue-500/50 focus:border-blue-500/50 transition-colors font-mono tracking-wide"
               />
-              <p className="mt-1 text-[11px] text-white/30">
+              <p className="mt-1 text-[11px] text-white/50">
                 17-character Vehicle Identification Number
               </p>
             </div>
@@ -128,16 +128,16 @@ export function SetupScreen() {
             {/* Google Maps Key (optional, only if deployer didn't set one) */}
             {config && !config.hasGoogleMapsKey && (
               <div>
-                <label className="block text-xs font-medium text-white/60 mb-1.5 uppercase tracking-wider">
+                <label className="block text-xs font-medium text-white/75 mb-1.5 uppercase tracking-wider">
                   Google Maps API Key{" "}
-                  <span className="text-white/30 normal-case">(optional)</span>
+                  <span className="text-white/50 normal-case">(optional)</span>
                 </label>
                 <input
                   type="text"
                   value={mapsKey}
                   onChange={(e) => setMapsKey(e.target.value)}
                   placeholder="For drive replay map features"
-                  className="w-full h-11 rounded-lg bg-white/[0.04] border border-white/[0.08] px-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:ring-1 focus:ring-blue-500/50 focus:border-blue-500/50 transition-colors"
+                  className="w-full h-11 rounded-lg bg-white/[0.04] border border-white/[0.08] px-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-1 focus:ring-blue-500/50 focus:border-blue-500/50 transition-colors"
                 />
               </div>
             )}
@@ -154,7 +154,7 @@ export function SetupScreen() {
             <button
               onClick={handleConnect}
               disabled={!canSubmit || isValidating}
-              className="w-full h-11 rounded-lg bg-blue-600 hover:bg-blue-500 disabled:bg-white/[0.06] disabled:text-white/30 text-white font-medium text-sm flex items-center justify-center gap-2 transition-colors mt-2"
+              className="w-full h-11 rounded-lg bg-blue-600 hover:bg-blue-500 disabled:bg-white/[0.06] disabled:text-white/50 text-white font-medium text-sm flex items-center justify-center gap-2 transition-colors mt-2"
             >
               {isValidating ? (
                 <>
@@ -174,7 +174,7 @@ export function SetupScreen() {
           <div className="mt-6 pt-5 border-t border-white/[0.06]">
             <div className="flex items-start gap-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-500/60 mt-0.5 flex-shrink-0" />
-              <p className="text-xs text-white/40 leading-relaxed">
+              <p className="text-xs text-white/55 leading-relaxed">
                 Your credentials are stored locally in your browser and sent
                 directly to the Tessie API through this server. They are never
                 stored on the server.
@@ -184,7 +184,7 @@ export function SetupScreen() {
         </div>
 
         {/* Footer link */}
-        <p className="text-center text-xs text-white/25 mt-4">
+        <p className="text-center text-xs text-white/45 mt-4">
           Need an API key?{" "}
           <a
             href="https://my.tessie.com/settings/api"

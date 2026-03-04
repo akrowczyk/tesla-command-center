@@ -45,16 +45,16 @@ function StatusItem({
             active ? "bg-white/[0.06]" : "bg-white/[0.03]"
           )}
         >
-          <span className={cn("w-4 h-4", active ? activeColor : "text-white/20")}>
+          <span className={cn("w-4 h-4", active ? activeColor : "text-white/40")}>
             {active ? activeIcon : inactiveIcon}
           </span>
         </div>
-        <span className="text-xs text-white/60">{label}</span>
+        <span className="text-xs text-white/75">{label}</span>
       </div>
       <span
         className={cn(
           "text-[11px] font-mono",
-          active ? activeColor : "text-white/30"
+          active ? activeColor : "text-white/50"
         )}
       >
         {active ? (activeLabel ?? "ON") : (inactiveLabel ?? "OFF")}
@@ -152,23 +152,23 @@ export function VehicleStatusCard() {
 
         {/* Tire pressures */}
         <div className="pt-3">
-          <span className="text-[10px] uppercase tracking-wider text-white/30 font-medium">Tire Pressure ({pressureUnit.toUpperCase()})</span>
+          <span className="text-[10px] uppercase tracking-wider text-white/50 font-medium">Tire Pressure ({pressureUnit.toUpperCase()})</span>
           <div className="grid grid-cols-2 gap-x-4 gap-y-1 mt-2">
             <div className="flex justify-between text-[11px]">
-              <span className="text-white/40">FL</span>
-              <span className="font-mono text-white/60">{convertPressure(vs.tpms_pressure_fl, pressureUnit)}</span>
+              <span className="text-white/60">FL</span>
+              <span className="font-mono text-white/75">{convertPressure(vs.tpms_pressure_fl, pressureUnit)}</span>
             </div>
             <div className="flex justify-between text-[11px]">
-              <span className="text-white/40">FR</span>
-              <span className="font-mono text-white/60">{convertPressure(vs.tpms_pressure_fr, pressureUnit)}</span>
+              <span className="text-white/60">FR</span>
+              <span className="font-mono text-white/75">{convertPressure(vs.tpms_pressure_fr, pressureUnit)}</span>
             </div>
             <div className="flex justify-between text-[11px]">
-              <span className="text-white/40">RL</span>
-              <span className="font-mono text-white/60">{convertPressure(vs.tpms_pressure_rl, pressureUnit)}</span>
+              <span className="text-white/60">RL</span>
+              <span className="font-mono text-white/75">{convertPressure(vs.tpms_pressure_rl, pressureUnit)}</span>
             </div>
             <div className="flex justify-between text-[11px]">
-              <span className="text-white/40">RR</span>
-              <span className="font-mono text-white/60">{convertPressure(vs.tpms_pressure_rr, pressureUnit)}</span>
+              <span className="text-white/60">RR</span>
+              <span className="font-mono text-white/75">{convertPressure(vs.tpms_pressure_rr, pressureUnit)}</span>
             </div>
           </div>
         </div>

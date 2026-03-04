@@ -45,16 +45,16 @@ export function BatterySection() {
 
       <div className="mt-4 w-full space-y-2">
         <div className="flex items-center justify-between text-xs">
-          <span className="text-white/40">Charge Limit</span>
-          <span className="font-mono text-white/70">{cs.charge_limit_soc}%</span>
+          <span className="text-white/60">Charge Limit</span>
+          <span className="font-mono text-white/85">{cs.charge_limit_soc}%</span>
         </div>
         <div className="flex items-center justify-between text-xs">
-          <span className="text-white/40">Est. Range</span>
-          <span className="font-mono text-white/70">{formatDistance(cs.est_battery_range, distanceUnit, 0)}</span>
+          <span className="text-white/60">Est. Range</span>
+          <span className="font-mono text-white/85">{formatDistance(cs.est_battery_range, distanceUnit, 0)}</span>
         </div>
         <div className="flex items-center justify-between text-xs">
-          <span className="text-white/40">Energy</span>
-          <span className="font-mono text-white/70">{cs.energy_remaining} kWh</span>
+          <span className="text-white/60">Energy</span>
+          <span className="font-mono text-white/85">{cs.energy_remaining} kWh</span>
         </div>
 
         {isCharging && (
@@ -64,16 +64,16 @@ export function BatterySection() {
               <span className="text-xs font-medium">Charging</span>
             </div>
             <div className="flex items-center justify-between text-xs">
-              <span className="text-white/40">Power</span>
+              <span className="text-white/60">Power</span>
               <span className="font-mono text-tesla-charging">{cs.charger_power} kW</span>
             </div>
             <div className="flex items-center justify-between text-xs">
-              <span className="text-white/40">Rate</span>
+              <span className="text-white/60">Rate</span>
               <span className="font-mono text-tesla-charging">{formatChargeRate(cs.charge_rate, distanceUnit)}</span>
             </div>
             <div className="flex items-center justify-between text-xs">
-              <span className="text-white/40">Added</span>
-              <span className="font-mono text-white/70">{cs.charge_energy_added} kWh</span>
+              <span className="text-white/60">Added</span>
+              <span className="font-mono text-white/85">{cs.charge_energy_added} kWh</span>
             </div>
           </div>
         )}

@@ -30,12 +30,12 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
         <div className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-lg bg-white/[0.08] flex items-center justify-center">
             <svg viewBox="0 0 32 32" className="w-5 h-5" fill="white">
-              <path d="M16 4c-2.4 0-7.8 1.2-11.2 2.7l1.8 3.6c2.4-0.9 5.7-1.65 9.4-1.65s7 0.75 9.4 1.65l1.8-3.6C23.8 5.2 18.4 4 16 4zM16 11.8c-1.5 0-2.85 0.15-3.9 0.3L16 28l3.9-15.9c-1.05-0.15-2.4-0.3-3.9-0.3z"/>
+              <path d="M16 4c-2.4 0-7.8 1.2-11.2 2.7l1.8 3.6c2.4-0.9 5.7-1.65 9.4-1.65s7 0.75 9.4 1.65l1.8-3.6C23.8 5.2 18.4 4 16 4zM16 11.8c-1.5 0-2.85 0.15-3.9 0.3L16 28l3.9-15.9c-1.05-0.15-2.4-0.3-3.9-0.3z" />
             </svg>
           </div>
           <div>
             <h1 className="text-sm font-semibold tracking-tight">Command Center</h1>
-            <p className="text-[11px] text-white/40">{vehicleName}</p>
+            <p className="text-[11px] text-white/60">{vehicleName}</p>
           </div>
         </div>
       </div>
@@ -59,7 +59,7 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
                   "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all duration-150",
                   isActive
                     ? "bg-tesla-red/10 text-tesla-red font-medium"
-                    : "text-white/50 hover:text-white/80 hover:bg-white/[0.03]"
+                    : "text-white/60 hover:text-white/80 hover:bg-white/[0.03]"
                 )}
               >
                 <Icon className="w-[18px] h-[18px]" />
@@ -78,7 +78,7 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
         {batteryLevel !== null && (
           <div className="mt-3">
             <div className="flex items-center justify-between mb-1.5">
-              <span className="text-[11px] text-white/40">Battery</span>
+              <span className="text-[11px] text-white/60">Battery</span>
               <span className="text-[13px] font-mono font-bold text-white/90">
                 {batteryLevel}%
               </span>
@@ -92,8 +92,8 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
                     batteryLevel > 40
                       ? "#22c55e"
                       : batteryLevel > 20
-                      ? "#ff6b35"
-                      : "#e31937",
+                        ? "#ff6b35"
+                        : "#e31937",
                 }}
               />
             </div>
@@ -104,7 +104,7 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
         {currentStatus && (
           <div className="flex items-center gap-2 mt-3">
             <div className={currentStatus.className} />
-            <span className="text-[11px] font-mono tracking-wider text-white/50">
+            <span className="text-[11px] font-mono tracking-wider text-white/65">
               {currentStatus.label}
             </span>
           </div>
@@ -130,7 +130,7 @@ export function MobileDrawer({ open, onClose }: { open: boolean; onClose: () => 
   // Close drawer on route change
   useEffect(() => {
     onClose();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   return (
@@ -154,7 +154,7 @@ export function MobileDrawer({ open, onClose }: { open: boolean; onClose: () => 
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 w-7 h-7 rounded-md bg-white/[0.06] flex items-center justify-center text-white/40 hover:text-white/80 transition-colors z-10"
+          className="absolute top-4 right-4 w-7 h-7 rounded-md bg-white/[0.06] flex items-center justify-center text-white/60 hover:text-white/80 transition-colors z-10"
         >
           <X className="w-4 h-4" />
         </button>

@@ -127,20 +127,20 @@ export default function DrivesPage() {
             ))}
           </div>
         ) : drives.length === 0 ? (
-          <p className="text-xs text-white/30 text-center py-8">No drives recorded in this period</p>
+          <p className="text-xs text-white/50 text-center py-8">No drives recorded in this period</p>
         ) : (
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow className="border-white/[0.06] hover:bg-transparent">
-                  <TableHead className="text-[11px] text-white/40">Date</TableHead>
-                  <TableHead className="text-[11px] text-white/40">From</TableHead>
-                  <TableHead className="text-[11px] text-white/40">To</TableHead>
-                  <TableHead className="text-[11px] text-white/40 text-right">Distance</TableHead>
-                  <TableHead className="text-[11px] text-white/40 text-right">Duration</TableHead>
-                  <TableHead className="text-[11px] text-white/40 text-right">Energy</TableHead>
-                  <TableHead className="text-[11px] text-white/40 text-right">Efficiency</TableHead>
-                  <TableHead className="text-[11px] text-white/40">Tag</TableHead>
+                  <TableHead className="text-[11px] text-white/60">Date</TableHead>
+                  <TableHead className="text-[11px] text-white/60">From</TableHead>
+                  <TableHead className="text-[11px] text-white/60">To</TableHead>
+                  <TableHead className="text-[11px] text-white/60 text-right">Distance</TableHead>
+                  <TableHead className="text-[11px] text-white/60 text-right">Duration</TableHead>
+                  <TableHead className="text-[11px] text-white/60 text-right">Energy</TableHead>
+                  <TableHead className="text-[11px] text-white/60 text-right">Efficiency</TableHead>
+                  <TableHead className="text-[11px] text-white/60">Tag</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -156,7 +156,7 @@ export default function DrivesPage() {
 
                   return (
                     <TableRow key={drive.id} className="border-white/[0.04] hover:bg-white/[0.02]">
-                      <TableCell className="text-xs font-mono text-white/60">
+                      <TableCell className="text-xs font-mono text-white/75">
                         {format(drive.started_at * 1000, "MMM d, h:mm a")}
                       </TableCell>
                       <TableCell className="text-xs text-white/60 max-w-[160px] truncate">
@@ -165,13 +165,13 @@ export default function DrivesPage() {
                       <TableCell className="text-xs text-white/60 max-w-[160px] truncate">
                         {drive.ending_saved_location || drive.ending_location.split(",")[0]}
                       </TableCell>
-                      <TableCell className="text-xs font-mono text-white/70 text-right">
+                      <TableCell className="text-xs font-mono text-white/85 text-right">
                         {formatDistance(drive.odometer_distance, distanceUnit)}
                       </TableCell>
-                      <TableCell className="text-xs font-mono text-white/60 text-right">
+                      <TableCell className="text-xs font-mono text-white/75 text-right">
                         {formatDuration(duration, { format: ["minutes"] }) || "< 1 min"}
                       </TableCell>
-                      <TableCell className="text-xs font-mono text-white/70 text-right">
+                      <TableCell className="text-xs font-mono text-white/85 text-right">
                         {drive.energy_used.toFixed(2)} kWh
                       </TableCell>
                       <TableCell className="text-xs font-mono text-right">
@@ -201,12 +201,12 @@ export default function DrivesPage() {
                 <BarChart data={weeklyData}>
                   <XAxis
                     dataKey="week"
-                    tick={{ fill: "rgba(255,255,255,0.3)", fontSize: 10 }}
+                    tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 10 }}
                     axisLine={false}
                     tickLine={false}
                   />
                   <YAxis
-                    tick={{ fill: "rgba(255,255,255,0.3)", fontSize: 10 }}
+                    tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 10 }}
                     axisLine={false}
                     tickLine={false}
                   />
@@ -226,12 +226,12 @@ export default function DrivesPage() {
                 <LineChart data={efficiencyTrend}>
                   <XAxis
                     dataKey="date"
-                    tick={{ fill: "rgba(255,255,255,0.3)", fontSize: 10 }}
+                    tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 10 }}
                     axisLine={false}
                     tickLine={false}
                   />
                   <YAxis
-                    tick={{ fill: "rgba(255,255,255,0.3)", fontSize: 10 }}
+                    tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 10 }}
                     axisLine={false}
                     tickLine={false}
                   />

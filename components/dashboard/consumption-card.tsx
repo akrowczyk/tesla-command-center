@@ -42,8 +42,8 @@ export function ConsumptionCard() {
       <div className="space-y-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Route className="w-3.5 h-3.5 text-white/30" />
-            <span className="text-xs text-white/40">Distance</span>
+            <Route className="w-3.5 h-3.5 text-white/50" />
+            <span className="text-xs text-white/60">Distance</span>
           </div>
           <span className="text-sm font-mono font-bold text-white/80">
             {formatDistance(data.distance_driven, distanceUnit)}
@@ -52,8 +52,8 @@ export function ConsumptionCard() {
 
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Zap className="w-3.5 h-3.5 text-white/30" />
-            <span className="text-xs text-white/40">Energy Used</span>
+            <Zap className="w-3.5 h-3.5 text-white/50" />
+            <span className="text-xs text-white/60">Energy Used</span>
           </div>
           <span className="text-sm font-mono font-bold text-white/80">
             {data.energy_used.toFixed(1)} kWh
@@ -62,8 +62,8 @@ export function ConsumptionCard() {
 
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Gauge className="w-3.5 h-3.5 text-white/30" />
-            <span className="text-xs text-white/40">Efficiency</span>
+            <Gauge className="w-3.5 h-3.5 text-white/50" />
+            <span className="text-xs text-white/60">Efficiency</span>
           </div>
           <span className="text-sm font-mono font-bold text-tesla-success">
             {efficiency} {efficiencyLabel(distanceUnit)}
@@ -72,8 +72,8 @@ export function ConsumptionCard() {
 
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Zap className="w-3.5 h-3.5 text-white/30" />
-            <span className="text-xs text-white/40">Battery Used</span>
+            <Zap className="w-3.5 h-3.5 text-white/50" />
+            <span className="text-xs text-white/60">Battery Used</span>
           </div>
           <span className="text-sm font-mono font-bold text-white/80">
             {data.battery_percent_used.toFixed(1)}%

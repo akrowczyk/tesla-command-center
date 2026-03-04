@@ -26,7 +26,7 @@ export default function ClimatePage() {
 
   useEffect(() => {
     if (climate) setDriverTemp(climate.driver_temp_setting);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [climate?.driver_temp_setting]);
 
   // Commands
@@ -127,7 +127,7 @@ export default function ClimatePage() {
               <span className="text-5xl font-mono font-bold text-white telemetry-value">
                 {displayTemp(driverTemp)}
               </span>
-              <span className="text-xl text-white/40 font-mono ml-1">{tempSymbol}</span>
+              <span className="text-xl text-white/60 font-mono ml-1">{tempSymbol}</span>
             </div>
 
             {/* Temperature slider */}
@@ -140,7 +140,7 @@ export default function ClimatePage() {
                 step={0.5}
                 className="mb-2"
               />
-              <div className="flex justify-between text-[10px] text-white/30 font-mono">
+              <div className="flex justify-between text-[10px] text-white/50 font-mono">
                 <span>{displayTemp(15)}{tempSymbol}</span>
                 <span>{displayTemp(28)}{tempSymbol}</span>
               </div>
@@ -169,20 +169,20 @@ export default function ClimatePage() {
           {/* Current readings */}
           <div className="space-y-2 pt-4 border-t border-white/[0.06]">
             <div className="flex justify-between text-xs">
-              <span className="text-white/40">Inside</span>
-              <span className="font-mono text-white/70">
+              <span className="text-white/60">Inside</span>
+              <span className="font-mono text-white/85">
                 {climate ? `${displayTemp(climate.inside_temp)}${tempSymbol}` : "—"}
               </span>
             </div>
             <div className="flex justify-between text-xs">
-              <span className="text-white/40">Outside</span>
-              <span className="font-mono text-white/70">
+              <span className="text-white/60">Outside</span>
+              <span className="font-mono text-white/85">
                 {climate ? `${displayTemp(climate.outside_temp)}${tempSymbol}` : "—"}
               </span>
             </div>
             <div className="flex justify-between text-xs">
-              <span className="text-white/40">Fan</span>
-              <span className="font-mono text-white/70">
+              <span className="text-white/60">Fan</span>
+              <span className="font-mono text-white/85">
                 {climate?.fan_status ?? "—"}
               </span>
             </div>
@@ -194,7 +194,7 @@ export default function ClimatePage() {
           <div className="divide-y divide-white/[0.04]">
             {SEAT_NAMES.filter(s => s.id !== "rear_center").map((seat) => (
               <div key={seat.id} className="flex items-center justify-between py-2.5">
-                <span className="text-xs text-white/60">{seat.label}</span>
+                <span className="text-xs text-white/75">{seat.label}</span>
                 <div className="flex items-center gap-4">
                   {/* Heat */}
                   <div className="flex items-center gap-1">
@@ -259,7 +259,7 @@ export default function ClimatePage() {
 
             {/* COP */}
             <div className="flex items-center justify-between">
-              <span className="text-xs text-white/60">Cabin Overheat Protection</span>
+              <span className="text-xs text-white/75">Cabin Overheat Protection</span>
               <CommandButton
                 label={climate?.cabin_overheat_protection !== "Off" ? "Disable" : "Enable"}
                 icon={ShieldAlert}
@@ -276,7 +276,7 @@ export default function ClimatePage() {
 
             {/* Bioweapon */}
             <div className="flex items-center justify-between">
-              <span className="text-xs text-white/60">Bioweapon Defense Mode</span>
+              <span className="text-xs text-white/75">Bioweapon Defense Mode</span>
               <CommandButton
                 label={isBioweaponOn ? "Disable" : "Enable"}
                 icon={ShieldAlert}
